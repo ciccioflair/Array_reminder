@@ -26,6 +26,10 @@
         select {
             padding: 2px;
         }
+
+        code {
+            white-space: pre;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +77,7 @@
     <script>
         const selection = document.querySelector("select");
         const para = document.createElement("p");
-        const code = document.createElement("pre");
+        const code = document.createElement("code");
         const box = document.getElementById("box");
         selection.addEventListener('change', function() {
             switch (this.value) {
