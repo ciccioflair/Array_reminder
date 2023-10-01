@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <style>
+        *, ::after, ::before {
+            box-sizing: border-box;
+        } 
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100svh;
+            height: 100vh;
+        }
+
+        .box-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <h1>Array methods</h1>
+        <h2>Select methods:</h2>
+        <select name="array-selector" id="array-selector">
+            <option value="" disabled selected>Please select method</option>
+            <option value="forEach">forEach()</option>
+            <option value="map">map()</option>
+            <option value="filter">filter()</option>
+            <option value="find">find()</option>
+            <option value="findIndex">findIndex()</option>
+            <option value="every">every()</option>
+            <option value="some">some()</option>
+            <option value="reduce">reduce()</option>
+            <option value="reduceRight">reduceRight()</option>
+            <option value="flat">flat()</option>
+            <option value="flatMap">flatMap()</option>
+            <option value="concat">concat()</option>
+            <option value="push">push()</option>
+            <option value="pop">pop()</option>
+            <option value="shift">shift()</option>
+            <option value="unshift">unshift()</option>
+            <option value="slice">slice()</option>
+            <option value="splice">splice()</option>
+            <option value="fill">fill()</option>
+            <option value="copyWithin">copyWithin()</option>
+            <option value="indexOf">indexOf()</option>
+            <option value="lastIndexOf">lastIndexOf()</option>
+            <option value="includes">includes()</option>
+            <option value="sort">sort()</option>
+            <option value="reverse">reverse()</option>
+            <option value="join">join()</option>
+            <option value="toString">toString()</option>
+            <option value="toLocaleString">toLocaleString()</option>
+            <option value="Array.of">Array.of()</option>
+            <option value="Array.from">Array.from()</option>
+            <option value="Array.isArray">Array.isArray()</option>
+        </select>
+        <div id="box">
+
+        </div>
+    </div>
+    <script>
+        const selection = document.querySelector("select");
+        const para = document.createElement("p");
+        const code = document.createElement("pre");
+        const box = document.getElementById("box");
+        selection.addEventListener('change', function() {
+            switch (this.value) {
+                case "forEach":
+                    console.log("forEach");
+                    para.innerHTML = "forEach() è un metodo disponibile sugli array in JavaScript che viene utilizzato per iterare su tutti gli elementi dell'array e applicare una funzione di callback a ciascun elemento. <br> La funzione di callback può accettare fino a tre parametri: il valore corrente, l'indice corrente e l'array su cui forEach() è stato chiamato.";
+                    box.appendChild(para);
+                    code.innerHTML = '   // Creiamo un array di numeri <br>' +
+                                     '   const numeri = [1, 2, 3, 4, 5]; <br><br>' +
+
+                                     '   // Utilizziamo forEach() per iterare su ogni elemento dell\'array e stampare il valore e l\'indice in console<br>' +
+                                     '   numeri.forEach(function(valore, indice) { <br>' +
+                                     '      console.log(`Valore: ${valore}, Indice: ${indice}`); <br>' +
+                                     '   }); '
+                    box.appendChild(code);
+                    break;
+                case "map":
+                    console.log("map");
+                    para.innerHTML = "map() paragraph.";
+                    box.appendChild(para);
+                    break;
+                case "filter":
+                    console.log("filter");
+                    break;
+                case "find":
+                    console.log("find");
+                    break;
+                case "findIndex":
+                    console.log("findIndex");
+                    break;
+                case "every":
+                    console.log("every");
+                    break;
+                case "some":
+                    console.log("some");
+                    break;
+                case "reduce":
+                    console.log("reduce");
+                    break;
+                case "reduceRight":
+                    console.log("reduceRight");
+                    break;
+                case "flat":
+                    console.log("flat");
+                    break;
+                case "flatMap":
+                    console.log("flatMap");
+                    break;
+                case "concat":
+                    console.log("concat");
+                    break;
+                case "push":
+                    console.log("push");
+                    break;
+                case "pop":
+                    console.log("pop");
+                    break;
+                case "shift":
+                    console.log("shift");
+                    break;
+                case "unshift":
+                    console.log("unshift");
+                    break;
+                case "slice":
+                    console.log("slice");
+                    break;
+                case "splice":
+                    console.log("splice");
+                    break;
+                case "fill":
+                    console.log("fill");
+                    break;
+                case "copyWithin":
+                    console.log("copyWithin");
+                    break;
+                case "indexOf":
+                    console.log("indexOf");
+                    break;
+                case "lastIndexOf":
+                    console.log("lastIndexOf");
+                    break;
+                case "includes":
+                    console.log("includes");
+                    break;
+                case "sort":
+                    console.log("sort");
+                    break;
+                case "reverse":
+                    console.log("reverse");
+                    break;
+                case "join":
+                    console.log("join");
+                    break;
+                case "toString":
+                    console.log("toString");
+                    break;
+                case "toLocaleString":
+                    console.log("toLocaleString");
+                    break;
+                case "Array.of":
+                    console.log("Array.of");
+                    break;
+                case "Array.from":
+                    console.log("Array.from");
+                    break;
+                case "Array.isArray":
+                    console.log("Array.isArray");
+                    break;                  
+                default:
+                    console.log("fine switch");
+                    break;
+            }
+        });
+        
+       
+
+    </script>
+</body>
+</html>
