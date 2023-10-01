@@ -27,13 +27,13 @@
             padding: 2px;
         }
 
-        code {
-            white-space: pre;
+        p, code {
+            padding: 0 1rem 0 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="box-container">
+    <div class="box-container" id="box">
         <h1>Array methods</h1>
         <h2>Select methods:</h2>
         <select name="array-selector" id="array-selector">
@@ -70,9 +70,6 @@
             <option value="Array.from">Array.from()</option>
             <option value="Array.isArray">Array.isArray()</option>
         </select>
-        <div id="box">
-
-        </div>
     </div>
     <script>
         const selection = document.querySelector("select");
@@ -88,9 +85,9 @@
                     code.innerHTML = '   // Creiamo un array di numeri <br>' +
                                      '   const numeri = [1, 2, 3, 4, 5]; <br><br>' +
 
-                                     '   // Utilizziamo forEach() per iterare su ogni elemento dell\'array e stampare il valore e l\'indice in console<br>' +
+                                     '   // Utilizziamo forEach() per iterare su ogni elemento dell\'array e stampare il valore e l\'indice in console<br><br>' +
                                      '   numeri.forEach(function(valore, indice) { <br>' +
-                                     '      console.log(`Valore: ${valore}, Indice: ${indice}`); <br>' +
+                                     '   &emsp; console.log(`Valore: ${valore}, Indice: ${indice}`); <br>' +
                                      '   }); '
                     box.appendChild(code);
                     break;
