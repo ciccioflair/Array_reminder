@@ -13,7 +13,8 @@
             margin: 0;
             padding: 0;
             height: 100svh;
-            height: 100vh;
+            height: 100vh; /* Fallback for IE and for some versions of Safari */
+            background: linear-gradient(to bottom, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         }
 
         .box-container {
@@ -28,7 +29,12 @@
         }
 
         p, code {
-            padding: 0 1rem 0 1rem;
+            padding: 1rem;
+        }
+
+        code {
+            background-color: black;
+            color: white;
         }
     </style>
 </head>
@@ -80,7 +86,7 @@
             switch (this.value) {
                 case "forEach":
                     console.log("forEach");
-                    para.innerHTML = "forEach() è un metodo disponibile sugli array in JavaScript che viene utilizzato per iterare su tutti gli elementi dell'array e applicare una funzione di callback a ciascun elemento. <br> La funzione di callback può accettare fino a tre parametri: il valore corrente, l'indice corrente e l'array su cui forEach() è stato chiamato.";
+                    para.innerHTML = "<strong>forEach()</strong> è un metodo disponibile sugli array in JavaScript che viene utilizzato per iterare su tutti gli elementi dell'array e applicare una funzione di callback a ciascun elemento. <br> La funzione di callback può accettare fino a tre parametri: il valore corrente, l'indice corrente e l'array su cui forEach() è stato chiamato.";
                     box.appendChild(para);
                     code.innerHTML = '   // Creiamo un array di numeri <br>' +
                                      '   const numeri = [1, 2, 3, 4, 5]; <br><br>' +
@@ -93,17 +99,43 @@
                     break;
                 case "map":
                     console.log("map");
-                    para.innerHTML = "map() paragraph.";
+                    para.innerHTML = "Il metodo <strong>map()</strong> è una funzione degli array in JavaScript che consente di creare un nuovo array applicando una determinata funzione a ciascun elemento dell'array originale. <br> La funzione map() restituisce un nuovo array con gli elementi trasformati.";
                     box.appendChild(para);
+                    code.innerHTML = "  const numeri = [1, 2, 3, 4, 5]; <br><br>" +
+                                     "  const numdouble = numeri.map(element => element * 2);" +
+
+                                     "  console.log(numdouble); // => [2, 4, 6, 8, 10]"
+                    box.appendChild(code);
                     break;
                 case "filter":
                     console.log("filter");
+                    para.innerHTML = "Il metodo <strong>filter()</strong> è una funzione degli array in JavaScript che consente di creare un nuovo array contenente tutti gli elementi che soddisfano una determinata condizione definita da una funzione di callback.<br> Gli elementi dell'array originale che non soddisfano la condizione vengono esclusi dal nuovo array."
+                    box.appendChild(para);
+                    code.innerHTML = "  const numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];<br><br>" +
+                                     
+                                     "  const numpari = numeri.filter(element => !(element % 2));<br>" +
+                                     "  console.log(numpari); // => [2, 4, 6, 8, 10]"
+                    box.appendChild(code);
                     break;
                 case "find":
                     console.log("find");
+                    para.innerHTML = "Il metodo <strong>find()</strong> è una funzione degli array in JavaScript che consente di trovare il primo elemento in un array che soddisfa una determinata condizione specificata da una funzione di callback.<br> Una volta trovato l'elemento, la funzione find() restituisce il suo valore, altrimenti restituisce undefined se nessun elemento soddisfa la condizione."
+                    box.appendChild(para);
+                    code.innerHTML = "  const numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];<br><br>" +
+
+                                     "  let sette = numeri.find(element => (element === 7));<br>" +
+                                     "  console.log(sette); // => 7"
+                    box.appendChild(code);
                     break;
                 case "findIndex":
                     console.log("findIndex");
+                    para.innerHTML = "Il metodo <strong>findIndex()</strong> è un metodo degli array in JavaScript che è simile al metodo <strong>find()</strong>, ma invece di restituire il valore dell'elemento che soddisfa una condizione specificata, restituisce l'indice del primo elemento che soddisfa tale condizione."
+                    box.appendChild(para);
+                    code.innerHTML = "  const numeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];<br><br>" +
+
+                                     "  let indexSette = numeri.findIndex(element => (element === 7));<br>" +
+                                     "  console.log(indexSette); // => 6"
+                    box.appendChild(code);
                     break;
                 case "every":
                     console.log("every");
