@@ -12,8 +12,8 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100svh;
             height: 100vh; /* Fallback for IE and for some versions of Safari */
+            height: 100svh;
             background: linear-gradient(to bottom, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         }
 
@@ -35,6 +35,12 @@
         code {
             background-color: black;
             color: white;
+        }
+
+        @media (min-width: 1280px) {
+            p {
+                max-width: 70%;
+            }
         }
     </style>
 </head>
@@ -139,15 +145,45 @@
                     break;
                 case "every":
                     console.log("every");
+                    para.innerHTML = "Il metodo <strong>every()</strong> in JavaScript è utilizzato per verificare se tutti gli elementi di un array soddisfano una determinata condizione definita da una funzione di callback.<br> Restituisce true se tutti gli elementi soddisfano la condizione e false se almeno uno degli elementi non la soddisfa.<br> La funzione di callback accetta tre argomenti: elemento corrente, indice corrente e array su cui è stata chiamata."
+                    box.appendChild(para);
+                    code.innerHTML = "  const nomi = ['Andrea', 'Arturo', 'Arianna', 'Aurora'];<br><br>" +
+
+                                     "  let boolValue = nomi.every(nome => nome[0] === 'A');<br>" +
+                                     "  let response = boolValue ? \"Tutti i nomi iniziano con la 'A'\" : \"Non tutti i nomi iniziano con la 'A'\";<br>" +
+                                     "  console.log(response); // => Tutti i nomi iniziano con la 'A'"
+                    box.appendChild(code);                                     
                     break;
                 case "some":
                     console.log("some");
+                    para.innerHTML = "Il metodo <strong>some()</strong> è una funzione incorporata in JavaScript che viene utilizzata per verificare se almeno un elemento di un array soddisfa una determinata condizione, eseguendo una funzione di callback per ogni elemento dell'array.<br> Restituirà true se almeno un elemento soddisfa la condizione, altrimenti restituirà false."
+                    box.appendChild(para);
+                    code.innerHTML = "  const nomi = ['Arturo', 'Giovanni', 'Pino', 'Francesco', 'Gilberto'];<br><br>" +
+
+                                     "  let boolValue = nomi.some(nome => nome === 'Pino');<br>" +
+                                     "  let response = boolValue ? \"Il nome 'Pino' è presente nell'array\" : \"Il nome 'Pino' non è presente nell'array\";<br>" +
+                                     "  console.log(response); // => Il nome 'Pino' è presente nell'array"
+                    box.appendChild(code);
                     break;
                 case "reduce":
                     console.log("reduce");
+                    para.innerHTML = "Il metodo <strong>reduce()</strong> è una funzione incorporata in JavaScript utilizzata per ridurre un array a un singolo valore, applicando una funzione di callback a ciascun elemento dell'array.<br> Questa funzione di callback accumula un valore mentre scorre l'array e restituisce il risultato finale. Il risultato può essere qualsiasi tipo di valore, come un numero, una stringa, un oggetto o persino un altro array."
+                    box.appendChild(para);
+                    code.innerHTML = '  const array = ["Ciao", "mamma", "guarda", "come", "mi", "diverto"];<br><br>' +
+
+                                     '  let concatenatedString = array.reduce((accumulator, currentValue) => accumulator + " " + currentValue);<br>' +
+                                     '  console.log(concatenatedString); // => "Ciao mamma guarda come mi diverto"'
+                    box.appendChild(code);
                     break;
                 case "reduceRight":
                     console.log("reduceRight");
+                    para.innerHTML = "Il metodo reduceRight() in JavaScript è una funzione disponibile sugli array che viene utilizzata per eseguire una riduzione su tutti gli elementi dell'array, partendo dall'ultimo elemento e procedendo verso il primo.<br> Questo metodo accetta una funzione di callback come argomento e restituisce un singolo valore risultante dalla riduzione."
+                    box.appendChild(para);
+                    code.innerHTML = '  const array = ["diverto", "mi", "come", "guarda", "mamma", "Ciao"];<br><br>' +
+
+                                     '  let concatenatedString = array.reduceRight((accumulator, currentValue) => accumulator + " " + currentValue);<br>' +
+                                     '  console.log(concatenatedString); // => "Ciao mamma guarda come mi diverto"'
+                    box.appendChild(code);
                     break;
                 case "flat":
                     console.log("flat");
